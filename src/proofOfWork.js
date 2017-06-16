@@ -1,10 +1,16 @@
-const SHA3 = require('sha3');
+const SHA3    = require('sha3');
+const bencode = require('bencode');
 
 // target is in bits. For instance if the payload hash and noce had
 // a binary output of "0010110100001..." and the target was 3
 // than we would check "001" to see if they are all zeros. Since
 // we still have a one left over, we rehash with a new nonce
 function proofOfWork(payload, target, nonce = -1) {
+  // assuming the payload is an array of transactions (objects)
+  // we should convert it to a bencode string
+  if (Array.isArray(payload))
+    payload = bencode.encode(payload);
+
   let solution = null;
 
   do {
@@ -27,6 +33,11 @@ function proofOfWork(payload, target, nonce = -1) {
 }
 
 function verify(payload, target, nonce) {
+  // assuming the payload is an array of transactions (objects)
+  // we should convert it to a bencode string
+  if (Array.isArray(payload))
+    payload = bencode.encode(payload);
+  
   solution = parseInt(
     toBinary(
       new SHA3.SHA3Hash()
