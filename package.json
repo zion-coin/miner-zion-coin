@@ -1,6 +1,6 @@
 {
   "name": "miner-zion-coin",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Simple Proof-of-Work miner algorithm",
   "main": "./src/proofOfWork.js",
   "scripts": {
