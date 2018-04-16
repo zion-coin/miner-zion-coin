@@ -22,7 +22,7 @@
     "babel-preset-flow": "^6.23.0",
     "eslint": "^3.19.0",
     "flow-bin": "^0.48.0",
-    "random-words": "0.0.1",
+    "random-words": "1.1.0",
     "tape": "^4.6.3"
   }
 }
