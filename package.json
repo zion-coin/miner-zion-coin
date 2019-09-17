@@ -13,7 +13,7 @@
   "author": "Craig OConnor",
   "license": "ISC",
   "dependencies": {
-    "big-integer": "^1.6.23",
+    "big-integer": "^1.6.45",
     "sha3": "^1.2.0"
   },
   "devDependencies": {
